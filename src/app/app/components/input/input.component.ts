@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-input',
+  selector: 'lib-input',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './input.component.html',

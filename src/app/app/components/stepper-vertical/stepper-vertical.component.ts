@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-stepper-vertical',
+  selector: 'lib-stepper-vertical',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './stepper-vertical.component.html',

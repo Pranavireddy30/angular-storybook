@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-loader',
+  selector: 'lib-loader',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './loader.component.html',

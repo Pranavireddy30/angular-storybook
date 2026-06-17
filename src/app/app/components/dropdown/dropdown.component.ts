@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-dropdown',
+  selector: 'lib-dropdown',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dropdown.component.html',

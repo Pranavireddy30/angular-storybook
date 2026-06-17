@@ -23,15 +23,15 @@ describe('HeaderComponent', () => {
   it('should display logout button when user is logged in', () => {
     component.user = { name: 'John Doe' };
     fixture.detectChanges();
-    const logoutButton = fixture.nativeElement.querySelector('app-button[label="Log out"]');
+    const logoutButton = fixture.nativeElement.querySelector('lib-button[label="Log out"]');
     expect(logoutButton).toBeTruthy();
   });
 
   it('should display login and signup buttons when user is logged out', () => {
     component.user = null;
     fixture.detectChanges();
-    const loginButton = fixture.nativeElement.querySelector('app-button[label="Log in"]');
-    const signupButton = fixture.nativeElement.querySelector('app-button[label="Sign up"]');
+    const loginButton = fixture.nativeElement.querySelector('lib-button[label="Log in"]');
+    const signupButton = fixture.nativeElement.querySelector('lib-button[label="Sign up"]');
     expect(loginButton).toBeTruthy();
     expect(signupButton).toBeTruthy();
   });
@@ -48,7 +48,7 @@ describe('HeaderComponent', () => {
     spyOn(component.onLogin, 'emit');
     component.user = null;
     fixture.detectChanges();
-    const loginButton = fixture.nativeElement.querySelector('app-button[label="Log in"]');
+    const loginButton = fixture.nativeElement.querySelector('lib-button[label="Log in"]');
     loginButton.click();
     expect(component.onLogin.emit).toHaveBeenCalled();
   });
@@ -57,7 +57,7 @@ describe('HeaderComponent', () => {
     spyOn(component.onLogout, 'emit');
     component.user = { name: 'John Doe' };
     fixture.detectChanges();
-    const logoutButton = fixture.nativeElement.querySelector('app-button[label="Log out"]');
+    const logoutButton = fixture.nativeElement.querySelector('lib-button[label="Log out"]');
     logoutButton.click();
     expect(component.onLogout.emit).toHaveBeenCalled();
   });

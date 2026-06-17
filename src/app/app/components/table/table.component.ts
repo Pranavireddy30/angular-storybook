@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-table',
+  selector: 'lib-table',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './table.component.html',

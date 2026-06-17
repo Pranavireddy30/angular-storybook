@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-file-upload',
+  selector: 'lib-file-upload',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './file-upload.component.html',

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-kebab',
+  selector: 'lib-icon-kebab',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './icon-kebab.component.html',

@@ -14,5 +14,5 @@ type Story = StoryObj<PopupComponent>;
 
 export const Default: Story = {
   args: { open: true, title: 'Preview Popup' },
-  render: args => ({ props: args, template: `<app-popup [open]="open" [title]="title">Hello popup</app-popup>` }),
+  render: args => ({ props: args, template: `<lib-popup [open]="open" [title]="title">Hello popup</lib-popup>` }),
 };

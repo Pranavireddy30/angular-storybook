@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-toggle-switch',
+  selector: 'lib-toggle-switch',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './toggle-switch.component.html',

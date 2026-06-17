@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'lib-button',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './button.component.html',

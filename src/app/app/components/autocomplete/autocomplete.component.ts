@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-autocomplete',
+  selector: 'lib-autocomplete',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './autocomplete.component.html',

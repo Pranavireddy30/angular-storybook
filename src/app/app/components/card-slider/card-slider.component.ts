@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-card-slider',
+  selector: 'lib-card-slider',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './card-slider.component.html',

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-password-input',
+  selector: 'lib-password-input',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './password-input.component.html',

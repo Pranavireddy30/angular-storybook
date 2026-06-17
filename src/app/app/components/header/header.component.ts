@@ -8,7 +8,7 @@ export interface User {
 }
 
 @Component({
-  selector: 'app-header',
+  selector: 'lib-header',
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   templateUrl: './header.component.html',

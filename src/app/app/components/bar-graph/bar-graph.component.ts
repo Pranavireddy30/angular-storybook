@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-bar-graph',
+  selector: 'lib-bar-graph',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './bar-graph.component.html',

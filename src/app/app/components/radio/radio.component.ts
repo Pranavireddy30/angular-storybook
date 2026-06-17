@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-radio',
+  selector: 'lib-radio',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './radio.component.html',

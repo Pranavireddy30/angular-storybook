@@ -14,11 +14,11 @@ type Story = StoryObj<CardSliderComponent>;
 export const Default: Story = {
   render: () => ({
     template: `
-      <app-card-slider>
-        <app-card title="One"></app-card>
-        <app-card title="Two"></app-card>
-        <app-card title="Three"></app-card>
-      </app-card-slider>
+      <lib-card-slider>
+        <lib-card title="One"></lib-card>
+        <lib-card title="Two"></lib-card>
+        <lib-card title="Three"></lib-card>
+      </lib-card-slider>
     `,
   }),
 };

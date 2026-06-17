@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-date-picker',
+  selector: 'lib-date-picker',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './date-picker.component.html',
