@@ -1,0 +1,6 @@
+<div class="app-file-upload" role="button">
+  <label class="app-file-upload__label">
+    <input type="file" [attr.multiple]="multiple ? true : null" [attr.accept]="accept" (change)="change($event)" />
+    <div class="app-file-upload__drop">Drop files here or click to select</div>
+  </label>
+</div>

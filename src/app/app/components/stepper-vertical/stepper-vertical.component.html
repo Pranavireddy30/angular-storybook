@@ -1,0 +1,8 @@
+<div class="app-stepper-vertical">
+  <ol>
+    <li *ngFor="let s of steps; let i = index" [class.active]="i === current" (click)="go(i)">
+      <div class="step-index">{{ i + 1 }}</div>
+      <div class="step-label">{{ s }}</div>
+    </li>
+  </ol>
+</div>

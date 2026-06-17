@@ -1,0 +1,6 @@
+.app-toggle { background: none; border: none; padding: 0; cursor: pointer; }
+.app-toggle .track { width: 44px; height: 24px; display: inline-block; background: #ddd; border-radius: 999px; position: relative; transition: background .2s; }
+.app-toggle .track.on { background: #555ab9; }
+.app-toggle .knob { width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; top: 50%; left: 4px; transform: translateY(-50%); transition: left .2s; }
+.app-toggle .track.on .knob { left: 22px; }
+.app-toggle[disabled] { opacity: 0.5; cursor: not-allowed; }

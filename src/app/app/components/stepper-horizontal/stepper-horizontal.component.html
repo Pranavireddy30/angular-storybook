@@ -1,0 +1,8 @@
+<nav class="app-stepper-horizontal">
+  <ol>
+    <li *ngFor="let s of steps; let i = index" [class.active]="i === current" (click)="go(i)">
+      <span class="step-index">{{ i + 1 }}</span>
+      <span class="step-label">{{ s }}</span>
+    </li>
+  </ol>
+</nav>

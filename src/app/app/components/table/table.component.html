@@ -1,0 +1,16 @@
+<table class="app-table">
+  <thead>
+    <tr><th *ngFor="let c of columns">{{ c.label }}</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of paged">
+      <td *ngFor="let c of columns">{{ row[c.key] }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="showPaginator" class="app-table__pager">
+  <button (click)="prev()" [disabled]="page===0">Prev</button>
+  <span>Page {{ page + 1 }} / {{ totalPages }}</span>
+  <button (click)="next()" [disabled]="page>= totalPages-1">Next</button>
+</div>

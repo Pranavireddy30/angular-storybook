@@ -1,0 +1,8 @@
+<div class="app-popup" *ngIf="open" role="dialog" aria-modal="true">
+  <div class="app-popup__backdrop" (click)="close.emit()"></div>
+  <div class="app-popup__panel">
+    <header *ngIf="title"><h3>{{ title }}</h3></header>
+    <section class="app-popup__body"><ng-content></ng-content></section>
+    <footer class="app-popup__footer"><button (click)="close.emit()">Close</button></footer>
+  </div>
+</div>

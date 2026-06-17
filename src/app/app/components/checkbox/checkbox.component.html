@@ -1,0 +1,4 @@
+<label [ngClass]="classes" [ngStyle]="{ 'background-color': backgroundColor }">
+  <input type="checkbox" [checked]="checked" (change)="onChange.emit($event)" />
+  <span class="app-checkbox__label">{{ label }}</span>
+</label>

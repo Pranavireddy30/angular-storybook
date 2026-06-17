@@ -1,0 +1,4 @@
+<label [ngClass]="classes">
+  <input type="radio" [name]="name" [value]="value" [checked]="checked" (change)="onChange.emit($event)" />
+  <span class="app-radio__label">{{ label }}</span>
+</label>

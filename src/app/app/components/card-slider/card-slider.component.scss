@@ -1,0 +1,3 @@
+.app-card-slider { display: flex; align-items: center; gap: 8px; }
+.app-card-slider__viewport { display: flex; overflow-x: auto; gap: 12px; scroll-behavior: smooth; }
+.app-card-slider button { background: none; border: none; font-size: 24px; cursor: pointer; }

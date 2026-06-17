@@ -1,0 +1,13 @@
+.app-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.app-checkbox__label { font-weight: 600; }
+
+.app-checkbox--primary input { accent-color: #555ab9; }
+.app-checkbox--secondary input { accent-color: #333; }
+
+input[type='checkbox'] { width: 16px; height: 16px; }

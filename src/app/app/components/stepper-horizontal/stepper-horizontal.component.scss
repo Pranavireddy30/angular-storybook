@@ -1,0 +1,4 @@
+.app-stepper-horizontal ol { display: flex; gap: 12px; list-style: none; padding: 0; margin: 0; }
+.app-stepper-horizontal li { cursor: pointer; padding: 8px 12px; border-radius: 6px; background: #f3f3f3; display: flex; gap: 8px; align-items: center; }
+.app-stepper-horizontal li.active { background: #555ab9; color: white; }
+.app-stepper-horizontal .step-index { font-weight: 700; }
