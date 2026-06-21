@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { AutocompleteComponent } from '../app/app/components/autocomplete/autocomplete.component';
+import { AutocompleteComponent } from '../app/components/autocomplete/autocomplete.component';
 
 const meta: Meta<AutocompleteComponent> = {
   title: 'Form/Autocomplete',

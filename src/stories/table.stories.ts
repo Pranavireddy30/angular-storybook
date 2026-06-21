@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { TableComponent } from '../app/app/components/table/table.component';
+import { TableComponent } from '../app/components/table/table.component';
 
 const meta: Meta<TableComponent> = {
   title: 'Data/Table',

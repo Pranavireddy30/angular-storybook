@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { CheckboxComponent } from '../app/app/components/checkbox/checkbox.component';
+import { CheckboxComponent } from '../app/components/checkbox/checkbox.component';
 
 const meta: Meta<CheckboxComponent> = {
   title: 'Form/Checkbox',

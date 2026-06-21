@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { DropdownComponent } from '../app/app/components/dropdown/dropdown.component';
+import { DropdownComponent } from '../app/components/dropdown/dropdown.component';
 
 const meta: Meta<DropdownComponent> = {
   title: 'Form/Dropdown',

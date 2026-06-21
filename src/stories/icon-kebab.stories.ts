@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { IconKebabComponent } from '../app/app/components/icon-kebab/icon-kebab.component';
+import { IconKebabComponent } from '../app/components/icon-kebab/icon-kebab.component';
 
 const meta: Meta<IconKebabComponent> = {
   title: 'Icons/Kebab',

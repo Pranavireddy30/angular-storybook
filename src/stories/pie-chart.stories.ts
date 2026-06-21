@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { PieChartComponent } from '../app/app/components/pie-chart/pie-chart.component';
+import { PieChartComponent } from '../app/components/pie-chart/pie-chart.component';
 
 const meta: Meta<PieChartComponent> = {
   title: 'Data/PieChart',

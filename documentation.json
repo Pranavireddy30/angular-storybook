@@ -4,7 +4,7 @@
         {
             "name": "User",
             "id": "interface-User-facc5eb86043f88189a92947e313f8fd0cf22ef63b0466f4f6e20e9940caec033f7aa769e1cbf39ee769c59aa0e23977c5e56834f7afc0b5c4665489d7e19c22",
-            "file": "src/app/app/components/header/header.component.ts",
+            "file": "src/app/components/header/header.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -29,7 +29,7 @@
         {
             "name": "User",
             "id": "interface-User-42e93643deb8d01f59838dddc4f83bde95e815ffbe08dc25c15f3887a7102461b6044d93a9c3374e782ecf630e75e79f9c737a18922bee5e27906fc03c4fbe07-1",
-            "file": "src/app/app/components/page/page.component.ts",
+            "file": "src/app/components/page/page.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -122,7 +122,7 @@
         {
             "name": "AutocompleteComponent",
             "id": "component-AutocompleteComponent-634407cb09bc5638a7c7e566e34ec1ade0c07983e55fc534a3093ace080c18ffe7b2ba416a1c22e54e4f4810f7ff56d2e1501bae67377917a9161a0d83291914",
-            "file": "src/app/app/components/autocomplete/autocomplete.component.ts",
+            "file": "src/app/components/autocomplete/autocomplete.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -290,7 +290,7 @@
         {
             "name": "BarGraphComponent",
             "id": "component-BarGraphComponent-04701da0b7404de177498a059a1fd3943fe45fbef5a49c40b7666bbe7dd8e08917a7997094fed39053f713d02aa03743a49a8fafd74b73a4e6547ea72aae4755",
-            "file": "src/app/app/components/bar-graph/bar-graph.component.ts",
+            "file": "src/app/components/bar-graph/bar-graph.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -381,7 +381,7 @@
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-a01233b61f315a3a68835b88af9d057342e5893caafcb34756516197bb22bd8aa09f653731a5d7d6ce8ef9f1d725c38ef48844967e366342b594affa102eb770",
-            "file": "src/app/app/components/button/button.component.ts",
+            "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -511,7 +511,7 @@
         {
             "name": "CardComponent",
             "id": "component-CardComponent-0f11cf099d710bd63cd58ddf4b52f0b7297159a6e8ed4716e41f55bfc9af8fa17a209b1520367cdc1e364f11d5a0c69cdbc6211c749716c47e33528ada70e9b9",
-            "file": "src/app/app/components/card/card.component.ts",
+            "file": "src/app/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -601,7 +601,7 @@
         {
             "name": "CardSliderComponent",
             "id": "component-CardSliderComponent-e90f90892cc9ea61c32fc90794c651e53d52711189052c20ff4422615050f1497688441a3aabd75290cfda76b955530e30c7a7c415389a73e5acbbb88a6eb729",
-            "file": "src/app/app/components/card-slider/card-slider.component.ts",
+            "file": "src/app/components/card-slider/card-slider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -687,7 +687,7 @@
         {
             "name": "CheckboxComponent",
             "id": "component-CheckboxComponent-46da3de75b86f3839929daf406f21ed31f4ef098db425cd72a8849672b700e29495138071d8d4160bf53e495c413bd677f4f76934c4460c0a0d6294d2d79956f",
-            "file": "src/app/app/components/checkbox/checkbox.component.ts",
+            "file": "src/app/components/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -786,7 +786,7 @@
         {
             "name": "DatePickerComponent",
             "id": "component-DatePickerComponent-7788819dafcfb16aabc417edff305d03648e412ce0fc5057e5f3acebd4cb408d77e7bddc36705aad0973f9eaccefb576c0537858c76fc25ed0308604514ce8e6",
-            "file": "src/app/app/components/date-picker/date-picker.component.ts",
+            "file": "src/app/components/date-picker/date-picker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -896,7 +896,7 @@
         {
             "name": "DropdownComponent",
             "id": "component-DropdownComponent-8dc3623bef3af48ad263ba0c22448dee5681683854390fef300842b861f6ceec35b3244b842eae42fa38c3720c1185ebf5b5282989565713a4b0c1824eb278ab",
-            "file": "src/app/app/components/dropdown/dropdown.component.ts",
+            "file": "src/app/components/dropdown/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1012,7 +1012,7 @@
         {
             "name": "FileUploadComponent",
             "id": "component-FileUploadComponent-8a2974a32652e7f2328ca9c7ec51feb92ed4ea881bef39cb2a9ea9e915c61cd01d9632cf1c4e45c352f59789d86d2b26cbce369f86d87c221b9fc9a0f328132c",
-            "file": "src/app/app/components/file-upload/file-upload.component.ts",
+            "file": "src/app/components/file-upload/file-upload.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1237,7 +1237,7 @@
         {
             "name": "GraphComponent",
             "id": "component-GraphComponent-92552a36102ec84bcd57747d93ba27957e880b47b48821d3322d1b2e11871b236c71b7fbd96e276c4d20500a89ab01a4e8ff6fb36f8cb88e5774330bf806c84a",
-            "file": "src/app/app/components/graph/graph.component.ts",
+            "file": "src/app/components/graph/graph.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1310,7 +1310,7 @@
         {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-facc5eb86043f88189a92947e313f8fd0cf22ef63b0466f4f6e20e9940caec033f7aa769e1cbf39ee769c59aa0e23977c5e56834f7afc0b5c4665489d7e19c22",
-            "file": "src/app/app/components/header/header.component.ts",
+            "file": "src/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1392,7 +1392,7 @@
         {
             "name": "IconKebabComponent",
             "id": "component-IconKebabComponent-1de54eb105d6654973a66ff7f850f2ff6c8f8577c372a513ce3a6b8ee3d41252b5c2f264c5c209fced7a8592a3d63c383d2147780841da816d733abccbfd475a",
-            "file": "src/app/app/components/icon-kebab/icon-kebab.component.ts",
+            "file": "src/app/components/icon-kebab/icon-kebab.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1444,7 +1444,7 @@
         {
             "name": "InputComponent",
             "id": "component-InputComponent-82dec1bac630b29166aec945a7da10352d0c1b634c0f94dcdb78766c96ae3c15ba5a5e8ccef3c3b1c6b51b0d2779a53c3737c6cb993f79f7e426b6c9ba2746e4",
-            "file": "src/app/app/components/input/input.component.ts",
+            "file": "src/app/components/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1569,7 +1569,7 @@
         {
             "name": "LoaderComponent",
             "id": "component-LoaderComponent-e59b1131c03b8896eeaef70129b18ae31512cb67ff1e50ce879d2976c98af9aeca82f4d2ac3c648af9cd044a9c0af0dd2b2887ce8a8a5dbd2993a5c276b06d88",
-            "file": "src/app/app/components/loader/loader.component.ts",
+            "file": "src/app/components/loader/loader.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1622,7 +1622,7 @@
         {
             "name": "PageComponent",
             "id": "component-PageComponent-42e93643deb8d01f59838dddc4f83bde95e815ffbe08dc25c15f3887a7102461b6044d93a9c3374e782ecf630e75e79f9c737a18922bee5e27906fc03c4fbe07",
-            "file": "src/app/app/components/page/page.component.ts",
+            "file": "src/app/components/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1712,7 +1712,7 @@
         {
             "name": "PasswordInputComponent",
             "id": "component-PasswordInputComponent-d6d9938a5667c806e8d079b75d25f23c268ec7bb21fae2bce0bef400116d210c5285d5f88a4acbed7f8878ce1af9d0124e736f479d74e4d3d9c99c4ad0ec805c",
-            "file": "src/app/app/components/password-input/password-input.component.ts",
+            "file": "src/app/components/password-input/password-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1838,7 +1838,7 @@
         {
             "name": "PieChartComponent",
             "id": "component-PieChartComponent-e619b2029e5b5069e579a35a348cd5d841493458bd3e911e552887d491b4faa69be52a3bc7f9a3a7894dc215935b08d1a02a5bebd1fb1f52ac09ddf081f7fdc5",
-            "file": "src/app/app/components/pie-chart/pie-chart.component.ts",
+            "file": "src/app/components/pie-chart/pie-chart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1985,7 +1985,7 @@
         {
             "name": "PopupComponent",
             "id": "component-PopupComponent-4db9e3fb4636dd4a98662ba0663fcd5a717cfd0072360317e1b2821de590e736289b88be4c53af0bc6f680d703b402087cb0bad6e928325f5abf91463a763db6",
-            "file": "src/app/app/components/popup/popup.component.ts",
+            "file": "src/app/components/popup/popup.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2056,7 +2056,7 @@
         {
             "name": "RadioComponent",
             "id": "component-RadioComponent-8a958b268c668674b336a4c6e1638af3a530da37f065b1b0e9535952988880a895701293ce0e9b17633dfc01f92539e9be4331ff2ba33d39dcdf916cdd751ed9",
-            "file": "src/app/app/components/radio/radio.component.ts",
+            "file": "src/app/components/radio/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2165,7 +2165,7 @@
         {
             "name": "StepperHorizontalComponent",
             "id": "component-StepperHorizontalComponent-57648dfd08e0005b3cb845d7956a19886d6bac96ac4bce64da10bca152d6240f23a6c660e66090819769b1c6aece6cd08e19ec75707669c8ba93fcb1fa5baaf2",
-            "file": "src/app/app/components/stepper-horizontal/stepper-horizontal.component.ts",
+            "file": "src/app/components/stepper-horizontal/stepper-horizontal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2269,7 +2269,7 @@
         {
             "name": "StepperVerticalComponent",
             "id": "component-StepperVerticalComponent-40bc18c51c425d1f967cc52ca339cced94830ff2a6184e64210b8c3d832685b890a3a70a59c6aee770aaf61922bc3a9804e4946bf4349921da3a039b6ca1f5da",
-            "file": "src/app/app/components/stepper-vertical/stepper-vertical.component.ts",
+            "file": "src/app/components/stepper-vertical/stepper-vertical.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2373,7 +2373,7 @@
         {
             "name": "TableComponent",
             "id": "component-TableComponent-7a274148ff970adbe24081f1666aa4d67dd8a9f94d07877d6eebb196f5b03d96f4eb04f21038e758256f02ea59a99899a0914a10a0cf91533f63c6eb866dfe63",
-            "file": "src/app/app/components/table/table.component.ts",
+            "file": "src/app/components/table/table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2506,7 +2506,7 @@
         {
             "name": "ToggleSwitchComponent",
             "id": "component-ToggleSwitchComponent-eb0345db84c933d20e5274ad0d2665c165a41cf36a8e2ab675d5a9e20bb0450511b33d730f879bbf9d6f7d84977c0eb99e93cf3b6ee8f0baed7937f94e829763",
-            "file": "src/app/app/components/toggle-switch/toggle-switch.component.ts",
+            "file": "src/app/components/toggle-switch/toggle-switch.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2884,7 +2884,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/autocomplete/autocomplete.component.ts",
+                "filePath": "src/app/components/autocomplete/autocomplete.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AutocompleteComponent",
@@ -2893,7 +2893,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/bar-graph/bar-graph.component.ts",
+                "filePath": "src/app/components/bar-graph/bar-graph.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BarGraphComponent",
@@ -2902,7 +2902,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/button/button.component.ts",
+                "filePath": "src/app/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -2911,7 +2911,7 @@
                 "status": "very-good"
             },
             {
-                "filePath": "src/app/app/components/card-slider/card-slider.component.ts",
+                "filePath": "src/app/components/card-slider/card-slider.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CardSliderComponent",
@@ -2920,7 +2920,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/card/card.component.ts",
+                "filePath": "src/app/components/card/card.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CardComponent",
@@ -2929,7 +2929,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/checkbox/checkbox.component.ts",
+                "filePath": "src/app/components/checkbox/checkbox.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CheckboxComponent",
@@ -2938,7 +2938,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/date-picker/date-picker.component.ts",
+                "filePath": "src/app/components/date-picker/date-picker.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DatePickerComponent",
@@ -2947,7 +2947,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/dropdown/dropdown.component.ts",
+                "filePath": "src/app/components/dropdown/dropdown.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "DropdownComponent",
@@ -2956,7 +2956,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/file-upload/file-upload.component.ts",
+                "filePath": "src/app/components/file-upload/file-upload.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FileUploadComponent",
@@ -2965,7 +2965,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/graph/graph.component.ts",
+                "filePath": "src/app/components/graph/graph.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "GraphComponent",
@@ -2974,7 +2974,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/header/header.component.ts",
+                "filePath": "src/app/components/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
@@ -2983,7 +2983,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/header/header.component.ts",
+                "filePath": "src/app/components/header/header.component.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
@@ -2992,7 +2992,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/icon-kebab/icon-kebab.component.ts",
+                "filePath": "src/app/components/icon-kebab/icon-kebab.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "IconKebabComponent",
@@ -3001,7 +3001,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/input/input.component.ts",
+                "filePath": "src/app/components/input/input.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "InputComponent",
@@ -3010,7 +3010,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/loader/loader.component.ts",
+                "filePath": "src/app/components/loader/loader.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LoaderComponent",
@@ -3019,7 +3019,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/page/page.component.ts",
+                "filePath": "src/app/components/page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",
@@ -3028,7 +3028,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/page/page.component.ts",
+                "filePath": "src/app/components/page/page.component.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
@@ -3037,7 +3037,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/password-input/password-input.component.ts",
+                "filePath": "src/app/components/password-input/password-input.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PasswordInputComponent",
@@ -3046,7 +3046,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/pie-chart/pie-chart.component.ts",
+                "filePath": "src/app/components/pie-chart/pie-chart.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PieChartComponent",
@@ -3055,7 +3055,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/popup/popup.component.ts",
+                "filePath": "src/app/components/popup/popup.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PopupComponent",
@@ -3064,7 +3064,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/radio/radio.component.ts",
+                "filePath": "src/app/components/radio/radio.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "RadioComponent",
@@ -3073,7 +3073,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/stepper-horizontal/stepper-horizontal.component.ts",
+                "filePath": "src/app/components/stepper-horizontal/stepper-horizontal.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "StepperHorizontalComponent",
@@ -3082,7 +3082,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/stepper-vertical/stepper-vertical.component.ts",
+                "filePath": "src/app/components/stepper-vertical/stepper-vertical.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "StepperVerticalComponent",
@@ -3091,7 +3091,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/table/table.component.ts",
+                "filePath": "src/app/components/table/table.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TableComponent",
@@ -3100,7 +3100,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/app/components/toggle-switch/toggle-switch.component.ts",
+                "filePath": "src/app/components/toggle-switch/toggle-switch.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ToggleSwitchComponent",

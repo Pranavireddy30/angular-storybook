@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { BarGraphComponent } from '../app/app/components/bar-graph/bar-graph.component';
+import { BarGraphComponent } from '../app/components/bar-graph/bar-graph.component';
 
 const meta: Meta<BarGraphComponent> = {
   title: 'Data/BarGraph',

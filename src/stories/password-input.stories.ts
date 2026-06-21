@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { PasswordInputComponent } from '../app/app/components/password-input/password-input.component';
+import { PasswordInputComponent } from '../app/components/password-input/password-input.component';
 
 const meta: Meta<PasswordInputComponent> = {
   title: 'Form/PasswordInput',

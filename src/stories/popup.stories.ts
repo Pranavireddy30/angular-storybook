@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { PopupComponent } from '../app/app/components/popup/popup.component';
+import { PopupComponent } from '../app/components/popup/popup.component';
 
 const meta: Meta<PopupComponent> = {
   title: 'Overlay/Popup',

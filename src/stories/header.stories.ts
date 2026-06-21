@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { HeaderComponent } from '../app/app/components/header/header.component';
+import { HeaderComponent } from '../app/components/header/header.component';
 
 const meta: Meta<HeaderComponent> = {
   title: 'Example/Header',

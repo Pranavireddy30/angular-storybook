@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
 
-import { RadioComponent } from '../app/app/components/radio/radio.component';
+import { RadioComponent } from '../app/components/radio/radio.component';
 
 const meta: Meta<RadioComponent> = {
   title: 'Form/Radio',

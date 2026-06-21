@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { GraphComponent } from '../app/app/components/graph/graph.component';
+import { GraphComponent } from '../app/components/graph/graph.component';
 
 const meta: Meta<GraphComponent> = {
   title: 'Data/Graph',

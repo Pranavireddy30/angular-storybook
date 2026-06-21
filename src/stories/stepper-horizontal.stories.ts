@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { StepperHorizontalComponent } from '../app/app/components/stepper-horizontal/stepper-horizontal.component';
+import { StepperHorizontalComponent } from '../app/components/stepper-horizontal/stepper-horizontal.component';
 
 const meta: Meta<StepperHorizontalComponent> = {
   title: 'Navigation/StepperHorizontal',

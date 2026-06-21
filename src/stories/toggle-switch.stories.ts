@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from 'storybook/test';
-import { ToggleSwitchComponent } from '../app/app/components/toggle-switch/toggle-switch.component';
+import { ToggleSwitchComponent } from '../app/components/toggle-switch/toggle-switch.component';
 
 const meta: Meta<ToggleSwitchComponent> = {
   title: 'Form/ToggleSwitch',
