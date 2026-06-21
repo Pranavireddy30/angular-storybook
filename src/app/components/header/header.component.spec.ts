@@ -13,7 +13,6 @@ describe('HeaderComponent', () => {
 
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -23,15 +22,17 @@ describe('HeaderComponent', () => {
   it('should display logout button when user is logged in', () => {
     component.user = { name: 'John Doe' };
     fixture.detectChanges();
-    const logoutButton = fixture.nativeElement.querySelector('lib-button[label="Log out"]');
+    const buttons = fixture.nativeElement.querySelectorAll('lib-button button');
+    const logoutButton = Array.from(buttons).find((b: any) => b.textContent.trim().includes('Log out')) as HTMLElement | undefined;
     expect(logoutButton).toBeTruthy();
   });
 
   it('should display login and signup buttons when user is logged out', () => {
     component.user = null;
     fixture.detectChanges();
-    const loginButton = fixture.nativeElement.querySelector('lib-button[label="Log in"]');
-    const signupButton = fixture.nativeElement.querySelector('lib-button[label="Sign up"]');
+    const buttons = fixture.nativeElement.querySelectorAll('lib-button button');
+    const loginButton = Array.from(buttons).find((b: any) => b.textContent.trim().includes('Log in')) as HTMLElement | undefined;
+    const signupButton = Array.from(buttons).find((b: any) => b.textContent.trim().includes('Sign up')) as HTMLElement | undefined;
     expect(loginButton).toBeTruthy();
     expect(signupButton).toBeTruthy();
   });
@@ -45,20 +46,26 @@ describe('HeaderComponent', () => {
   });
 
   it('should emit onLogin when login button is clicked', () => {
-    spyOn(component.onLogin, 'emit');
+    vi.spyOn(component.onLogin, 'emit' as any);
     component.user = null;
     fixture.detectChanges();
-    const loginButton = fixture.nativeElement.querySelector('lib-button[label="Log in"]');
-    loginButton.click();
+    const buttons = fixture.nativeElement.querySelectorAll('lib-button button');
+    const loginButton = Array.from(buttons).find((b: any) => b.textContent.trim().includes('Log in')) as HTMLElement | undefined;
+    expect(loginButton).toBeTruthy();
+    (loginButton as HTMLElement).click();
+    fixture.detectChanges();
     expect(component.onLogin.emit).toHaveBeenCalled();
   });
 
   it('should emit onLogout when logout button is clicked', () => {
-    spyOn(component.onLogout, 'emit');
+    vi.spyOn(component.onLogout, 'emit' as any);
     component.user = { name: 'John Doe' };
     fixture.detectChanges();
-    const logoutButton = fixture.nativeElement.querySelector('lib-button[label="Log out"]');
-    logoutButton.click();
+    const buttons = fixture.nativeElement.querySelectorAll('lib-button button');
+    const logoutButton = Array.from(buttons).find((b: any) => b.textContent.trim().includes('Log out')) as HTMLElement | undefined;
+    expect(logoutButton).toBeTruthy();
+    (logoutButton as HTMLElement).click();
+    fixture.detectChanges();
     expect(component.onLogout.emit).toHaveBeenCalled();
   });
 });

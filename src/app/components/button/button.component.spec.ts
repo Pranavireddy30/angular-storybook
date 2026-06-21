@@ -13,24 +13,27 @@ describe('ButtonComponent', () => {
 
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render button with label', () => {
+  it('should render button with label', async () => {
     component.label = 'Click me';
     fixture.detectChanges();
+    await fixture.whenStable();
     const button = fixture.nativeElement.querySelector('button');
-    expect(button.textContent).toContain('Click me');
+    expect(button).toBeTruthy();
+    expect((button.textContent || '').trim()).toContain('Click me');
   });
 
   it('should emit onClick when button is clicked', () => {
-    spyOn(component.onClick, 'emit');
+    vi.spyOn(component.onClick, 'emit' as any);
     const button = fixture.nativeElement.querySelector('button');
+    expect(button).toBeTruthy();
     button.click();
+    fixture.detectChanges();
     expect(component.onClick.emit).toHaveBeenCalled();
   });
 
@@ -38,7 +41,8 @@ describe('ButtonComponent', () => {
     component.primary = true;
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
-    expect(button.className).toContain('app-button--primary');
+    expect(button).toBeTruthy();
+    expect(Array.from((button.className || '').split(' '))).toContain('app-button--primary');
   });
 
   it('should apply secondary class when primary is false', () => {
