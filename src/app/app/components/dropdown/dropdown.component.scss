@@ -16,5 +16,4 @@
 .app-dropdown--small { font-size: 12px; }
 .app-dropdown--medium { font-size: 14px; }
 .app-dropdown--large { font-size: 16px; }
-
-select.app-dropdown { border: none; outline: none; }
+select.app-dropdown { border: 1px solid #171717; outline: none; background: #fff; border-radius: 6px; padding: 6px 8px; }

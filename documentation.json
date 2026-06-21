@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-2be3941ac6ebfbe3174a0aeb2aa62cc1a31b1d60fef82a5de4dd716478c8cba8b209c477e544892c9040ceb5f53832659575ea61c745b25b068c6090d0383352",
+            "id": "interface-User-facc5eb86043f88189a92947e313f8fd0cf22ef63b0466f4f6e20e9940caec033f7aa769e1cbf39ee769c59aa0e23977c5e56834f7afc0b5c4665489d7e19c22",
             "file": "src/app/app/components/header/header.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from '../button/button.component';\n\nexport interface User {\n  name: string;\n}\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from '../button/button.component';\n\nexport interface User {\n  name: string;\n}\n\n@Component({\n  selector: 'lib-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "properties": [
                 {
                     "name": "name",
@@ -121,14 +121,14 @@
         },
         {
             "name": "AutocompleteComponent",
-            "id": "component-AutocompleteComponent-9300ed029494d53d99e81601b07c88edec45a110b8b18efbaa23cdd488e039262727d3fe0016b5c2baef363cb2f057dc3e4b81ae55ebeccefc72050a4c6122d9",
+            "id": "component-AutocompleteComponent-634407cb09bc5638a7c7e566e34ec1ade0c07983e55fc534a3093ace080c18ffe7b2ba416a1c22e54e4f4810f7ff56d2e1501bae67377917a9161a0d83291914",
             "file": "src/app/app/components/autocomplete/autocomplete.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-autocomplete",
+            "selector": "lib-autocomplete",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -279,7 +279,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-autocomplete',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './autocomplete.component.html',\r\n  styleUrl: './autocomplete.component.scss',\r\n})\r\nexport class AutocompleteComponent {\r\n  @Input() suggestions: string[] = [];\r\n  @Input() placeholder = '';\r\n  @Input() value = '';\r\n\r\n  @Output() onInput = new EventEmitter<string>();\r\n  @Output() onSelect = new EventEmitter<string>();\r\n\r\n  public filtered: string[] = [];\r\n\r\n  onChange(ev: Event) {\r\n    const v = (ev.target as HTMLInputElement).value;\r\n    this.value = v;\r\n    this.filtered = this.suggestions.filter(s => s.toLowerCase().includes(v.toLowerCase()));\r\n    this.onInput.emit(v);\r\n  }\r\n\r\n  select(item: string) {\r\n    this.value = item;\r\n    this.filtered = [];\r\n    this.onSelect.emit(item);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-autocomplete',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './autocomplete.component.html',\r\n  styleUrl: './autocomplete.component.scss',\r\n})\r\nexport class AutocompleteComponent {\r\n  @Input() suggestions: string[] = [];\r\n  @Input() placeholder = '';\r\n  @Input() value = '';\r\n\r\n  @Output() onInput = new EventEmitter<string>();\r\n  @Output() onSelect = new EventEmitter<string>();\r\n\r\n  public filtered: string[] = [];\r\n\r\n  onChange(ev: Event) {\r\n    const v = (ev.target as HTMLInputElement).value;\r\n    this.value = v;\r\n    this.filtered = this.suggestions.filter(s => s.toLowerCase().includes(v.toLowerCase()));\r\n    this.onInput.emit(v);\r\n  }\r\n\r\n  select(item: string) {\r\n    this.value = item;\r\n    this.filtered = [];\r\n    this.onSelect.emit(item);\r\n  }\r\n}\r\n",
             "styleUrl": "./autocomplete.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -288,15 +288,106 @@
             "templateData": "<div class=\"app-autocomplete\">\r\n  <input class=\"app-autocomplete__input\" [placeholder]=\"placeholder\" [value]=\"value\" (input)=\"onChange($event)\" />\r\n  <ul *ngIf=\"filtered.length\" class=\"app-autocomplete__list\">\r\n    <li *ngFor=\"let item of filtered\" (click)=\"select(item)\">{{ item }}</li>\r\n  </ul>\r\n</div>\r\n"
         },
         {
+            "name": "BarGraphComponent",
+            "id": "component-BarGraphComponent-04701da0b7404de177498a059a1fd3943fe45fbef5a49c40b7666bbe7dd8e08917a7997094fed39053f713d02aa03743a49a8fafd74b73a4e6547ea72aae4755",
+            "file": "src/app/app/components/bar-graph/bar-graph.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-bar-graph",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./bar-graph.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "barGap",
+                    "defaultValue": "8",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "120",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "defaultValue": "300",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-bar-graph',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './bar-graph.component.html',\r\n  styleUrl: './bar-graph.component.scss',\r\n})\r\nexport class BarGraphComponent {\r\n  @Input() data: { label: string; value: number; color?: string }[] = [];\r\n  @Input() width = 300;\r\n  @Input() height = 120;\r\n  @Input() barGap = 8;\r\n\r\n  get bars() {\r\n    const max = this.data.length ? Math.max(...this.data.map(d => d.value)) : 1;\r\n    const count = this.data.length || 1;\r\n    const totalGap = this.barGap * Math.max(0, count - 1);\r\n    const barWidth = (this.width - totalGap) / count;\r\n    return this.data.map((d, i) => {\r\n      const h = max ? (d.value / max) * this.height : 0;\r\n      const x = i * (barWidth + this.barGap);\r\n      const y = this.height - h;\r\n      return { ...d, x, y, w: barWidth, h, color: d.color || '#555ab9' };\r\n    });\r\n  }\r\n}\r\n",
+            "styleUrl": "./bar-graph.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "bars": {
+                    "name": "bars",
+                    "getSignature": {
+                        "name": "bars",
+                        "type": "",
+                        "returnType": "",
+                        "line": 17
+                    }
+                }
+            },
+            "templateData": "<svg [attr.width]=\"width\" [attr.height]=\"height\" class=\"app-bar-graph\">\r\n  <g *ngFor=\"let b of bars\">\r\n    <rect [attr.x]=\"b.x\" [attr.y]=\"b.y\" [attr.width]=\"b.w\" [attr.height]=\"b.h\" [attr.fill]=\"b.color\"></rect>\r\n    <text [attr.x]=\"b.x + b.w / 2\" [attr.y]=\"height - 4\" text-anchor=\"middle\" class=\"label\">{{ b.label }}</text>\r\n  </g>\r\n</svg>\r\n"
+        },
+        {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-0a5c77d29ecd7dc44baf5c74f4a3272436563cbfee6b6f7334a3dc4e335a3e1bbc796f5a9d4255dc2019eaffb11118dc1d242554c92799e7f5f44b46618e3029",
+            "id": "component-ButtonComponent-a01233b61f315a3a68835b88af9d057342e5893caafcb34756516197bb22bd8aa09f653731a5d7d6ce8ef9f1d725c38ef48844967e366342b594affa102eb770",
             "file": "src/app/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-button",
+            "selector": "lib-button",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -398,7 +489,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'app-button--primary' : 'app-button--secondary';\n\n    return ['app-button', `app-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'lib-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'app-button--primary' : 'app-button--secondary';\n\n    return ['app-button', `app-button--${this.size}`, mode];\n  }\n}\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -419,14 +510,14 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-d8f3dd202c9fe4d6cae13be7cfa4cd6622a9d286254d428290ef40bf8b76698664c2bed815affdab7ced6935ba290a7f537d42c2086bef6441feee5b1bed47d5",
+            "id": "component-CardComponent-0f11cf099d710bd63cd58ddf4b52f0b7297159a6e8ed4716e41f55bfc9af8fa17a209b1520367cdc1e364f11d5a0c69cdbc6211c749716c47e33528ada70e9b9",
             "file": "src/app/app/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-card",
+            "selector": "lib-card",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -488,7 +579,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card.component.html',\r\n  styleUrl: './card.component.scss',\r\n})\r\nexport class CardComponent {\r\n  @Input()\r\n  title = '';\r\n\r\n  @Input()\r\n  subtitle = '';\r\n\r\n  @Input()\r\n  image?: string;\r\n\r\n  @Input()\r\n  elevated = false;\r\n\r\n  public get classes(): string[] {\r\n    return ['app-card', this.elevated ? 'app-card--elevated' : 'app-card--flat'];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-card',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card.component.html',\r\n  styleUrl: './card.component.scss',\r\n})\r\nexport class CardComponent {\r\n  @Input()\r\n  title = '';\r\n\r\n  @Input()\r\n  subtitle = '';\r\n\r\n  @Input()\r\n  image?: string;\r\n\r\n  @Input()\r\n  elevated = false;\r\n\r\n  public get classes(): string[] {\r\n    return ['app-card', this.elevated ? 'app-card--elevated' : 'app-card--flat'];\r\n  }\r\n}\r\n",
             "styleUrl": "./card.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -509,14 +600,14 @@
         },
         {
             "name": "CardSliderComponent",
-            "id": "component-CardSliderComponent-3ec820fe291bc3ef18458a79415fa247880c39973e1e6d6ad0cbc5b29409a278ead6fd271491fcf602234f7d7d97f3aef35319dde0caf769a7df232878255e3b",
+            "id": "component-CardSliderComponent-e90f90892cc9ea61c32fc90794c651e53d52711189052c20ff4422615050f1497688441a3aabd75290cfda76b955530e30c7a7c415389a73e5acbbb88a6eb729",
             "file": "src/app/app/components/card-slider/card-slider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-card-slider",
+            "selector": "lib-card-slider",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -585,7 +676,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card-slider',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card-slider.component.html',\r\n  styleUrl: './card-slider.component.scss',\r\n})\r\nexport class CardSliderComponent {\r\n  @Input() gap = 12;\r\n  current = 0;\r\n\r\n  prev() { this.current = Math.max(0, this.current - 1); }\r\n  next() { this.current = this.current + 1; }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-card-slider',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card-slider.component.html',\r\n  styleUrl: './card-slider.component.scss',\r\n})\r\nexport class CardSliderComponent {\r\n  @Input() gap = 12;\r\n  current = 0;\r\n\r\n  prev() { this.current = Math.max(0, this.current - 1); }\r\n  next() { this.current = this.current + 1; }\r\n}\r\n",
             "styleUrl": "./card-slider.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -595,14 +686,14 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-d85fdc1f749bdc415674e25e8337247b1d1b0f1f8b324143e983b2082b61b312ff441c9b536efa4b2699bbafaeaef9ab0e08f8ebbdede12a8b4e64d9a76fb55c",
+            "id": "component-CheckboxComponent-46da3de75b86f3839929daf406f21ed31f4ef098db425cd72a8849672b700e29495138071d8d4160bf53e495c413bd677f4f76934c4460c0a0d6294d2d79956f",
             "file": "src/app/app/components/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-checkbox",
+            "selector": "lib-checkbox",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -673,7 +764,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrl: './checkbox.component.scss',\r\n})\r\nexport class CheckboxComponent {\r\n  @Input()\r\n  label = '';\r\n\r\n  @Input()\r\n  checked = false;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-checkbox--primary' : 'app-checkbox--secondary';\r\n    return ['app-checkbox', mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-checkbox',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrl: './checkbox.component.scss',\r\n})\r\nexport class CheckboxComponent {\r\n  @Input()\r\n  label = '';\r\n\r\n  @Input()\r\n  checked = false;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-checkbox--primary' : 'app-checkbox--secondary';\r\n    return ['app-checkbox', mode];\r\n  }\r\n}\r\n",
             "styleUrl": "./checkbox.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -694,14 +785,14 @@
         },
         {
             "name": "DatePickerComponent",
-            "id": "component-DatePickerComponent-5feb51cc1dbe4a9ff62c5fba3ef26e8aeb3b7ac338637d6b45e6edbc520d50784016b7a4d4f79b746898d773842c8d55e773871c2674c522351822330bba181f",
+            "id": "component-DatePickerComponent-7788819dafcfb16aabc417edff305d03648e412ce0fc5057e5f3acebd4cb408d77e7bddc36705aad0973f9eaccefb576c0537858c76fc25ed0308604514ce8e6",
             "file": "src/app/app/components/date-picker/date-picker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-date-picker",
+            "selector": "lib-date-picker",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -794,7 +885,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-date-picker',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './date-picker.component.html',\r\n  styleUrl: './date-picker.component.scss',\r\n})\r\nexport class DatePickerComponent {\r\n  @Input() value?: string;\r\n  @Input() min?: string;\r\n  @Input() max?: string;\r\n\r\n  @Output() onChange = new EventEmitter<string>();\r\n\r\n  change(ev: Event) {\r\n    const v = (ev.target as HTMLInputElement).value;\r\n    this.value = v;\r\n    this.onChange.emit(v);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-date-picker',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './date-picker.component.html',\r\n  styleUrl: './date-picker.component.scss',\r\n})\r\nexport class DatePickerComponent {\r\n  @Input() value?: string;\r\n  @Input() min?: string;\r\n  @Input() max?: string;\r\n\r\n  @Output() onChange = new EventEmitter<string>();\r\n\r\n  change(ev: Event) {\r\n    const v = (ev.target as HTMLInputElement).value;\r\n    this.value = v;\r\n    this.onChange.emit(v);\r\n  }\r\n}\r\n",
             "styleUrl": "./date-picker.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -804,14 +895,14 @@
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-1c54b04384cfa7c07e6abb46807f015a4b27f62abb4e7f861fee9e5e498af886997b92e8af5abc779902edb623c99493a38d925c74f3ebaa35a19509422b658e",
+            "id": "component-DropdownComponent-8dc3623bef3af48ad263ba0c22448dee5681683854390fef300842b861f6ceec35b3244b842eae42fa38c3720c1185ebf5b5282989565713a4b0c1824eb278ab",
             "file": "src/app/app/components/dropdown/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-dropdown",
+            "selector": "lib-dropdown",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -899,7 +990,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './dropdown.component.html',\r\n  styleUrl: './dropdown.component.scss',\r\n})\r\nexport class DropdownComponent {\r\n  @Input()\r\n  options: { label: string; value: string }[] = [];\r\n\r\n  @Input()\r\n  placeholder = 'Select...';\r\n\r\n  @Input()\r\n  selected?: string;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Output()\r\n  onSelect = new EventEmitter<string>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-dropdown--primary' : 'app-dropdown--secondary';\r\n    return ['app-dropdown', `app-dropdown--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './dropdown.component.html',\r\n  styleUrl: './dropdown.component.scss',\r\n})\r\nexport class DropdownComponent {\r\n  @Input()\r\n  options: { label: string; value: string }[] = [];\r\n\r\n  @Input()\r\n  placeholder = 'Select...';\r\n\r\n  @Input()\r\n  selected?: string;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Output()\r\n  onSelect = new EventEmitter<string>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-dropdown--primary' : 'app-dropdown--secondary';\r\n    return ['app-dropdown', `app-dropdown--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "styleUrl": "./dropdown.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -916,18 +1007,18 @@
                     }
                 }
             },
-            "templateData": "<select\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  (change)=\"onSelect.emit($event.target.value)\"\r\n>\r\n  <option value=\"\">{{ placeholder }}</option>\r\n  <option *ngFor=\"let opt of options\" [value]=\"opt.value\" [selected]=\"opt.value === selected\">\r\n    {{ opt.label }}\r\n  </option>\r\n</select>\r\n"
+            "templateData": "<select #sel\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  (change)=\"onSelect.emit(sel.value)\"\r\n>\r\n  <option value=\"\">{{ placeholder }}</option>\r\n  <option *ngFor=\"let opt of options\" [value]=\"opt.value\" [selected]=\"opt.value === selected\">\r\n    {{ opt.label }}\r\n  </option>\r\n</select>\r\n"
         },
         {
             "name": "FileUploadComponent",
-            "id": "component-FileUploadComponent-8b2c934949f671d5f6f48a5173022064f900003e3d4c6f0dae70cbca0d1adfc94fce0dc37912441632dd487be7cce42d215fa2b475f537d3bf3fe7a54e21bd7c",
+            "id": "component-FileUploadComponent-8a2974a32652e7f2328ca9c7ec51feb92ed4ea881bef39cb2a9ea9e915c61cd01d9632cf1c4e45c352f59789d86d2b26cbce369f86d87c221b9fc9a0f328132c",
             "file": "src/app/app/components/file-upload/file-upload.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-file-upload",
+            "selector": "lib-file-upload",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1135,7 +1226,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-file-upload',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrl: './file-upload.component.scss',\r\n})\r\nexport class FileUploadComponent {\r\n  @Input() accept = '';\r\n  @Input() multiple = false;\r\n\r\n  @Output() onFiles = new EventEmitter<FileList | null>();\r\n\r\n  @HostListener('drop', ['$event'])\r\n  onDrop(event: DragEvent) {\r\n    event.preventDefault();\r\n    this.onFiles.emit(event.dataTransfer?.files ?? null);\r\n  }\r\n\r\n  @HostListener('dragover', ['$event'])\r\n  onDragOver(event: DragEvent) { event.preventDefault(); }\r\n\r\n  change(ev: Event) { this.onFiles.emit((ev.target as HTMLInputElement).files); }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-file-upload',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './file-upload.component.html',\r\n  styleUrl: './file-upload.component.scss',\r\n})\r\nexport class FileUploadComponent {\r\n  @Input() accept = '';\r\n  @Input() multiple = false;\r\n\r\n  @Output() onFiles = new EventEmitter<FileList | null>();\r\n\r\n  @HostListener('drop', ['$event'])\r\n  onDrop(event: DragEvent) {\r\n    event.preventDefault();\r\n    this.onFiles.emit(event.dataTransfer?.files ?? null);\r\n  }\r\n\r\n  @HostListener('dragover', ['$event'])\r\n  onDragOver(event: DragEvent) { event.preventDefault(); }\r\n\r\n  change(ev: Event) { this.onFiles.emit((ev.target as HTMLInputElement).files); }\r\n}\r\n",
             "styleUrl": "./file-upload.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1144,15 +1235,88 @@
             "templateData": "<div class=\"app-file-upload\" role=\"button\">\r\n  <label class=\"app-file-upload__label\">\r\n    <input type=\"file\" [attr.multiple]=\"multiple ? true : null\" [attr.accept]=\"accept\" (change)=\"change($event)\" />\r\n    <div class=\"app-file-upload__drop\">Drop files here or click to select</div>\r\n  </label>\r\n</div>\r\n"
         },
         {
+            "name": "GraphComponent",
+            "id": "component-GraphComponent-92552a36102ec84bcd57747d93ba27957e880b47b48821d3322d1b2e11871b236c71b7fbd96e276c4d20500a89ab01a4e8ff6fb36f8cb88e5774330bf806c84a",
+            "file": "src/app/app/components/graph/graph.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-graph",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./graph.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "stroke",
+                    "defaultValue": "'#555ab9'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-graph',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './graph.component.html',\r\n  styleUrl: './graph.component.scss',\r\n})\r\nexport class GraphComponent {\r\n  @Input() data: number[] = [];\r\n  @Input() stroke = '#555ab9';\r\n\r\n  get points(): string {\r\n    if (!this.data || this.data.length === 0) return '';\r\n    const w = 300; const h = 120; const max = Math.max(...this.data);\r\n    return this.data.map((v, i) => `${(i/(this.data.length-1))*w},${h - (v/max)*h}`).join(' ');\r\n  }\r\n}\r\n",
+            "styleUrl": "./graph.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "points": {
+                    "name": "points",
+                    "getSignature": {
+                        "name": "points",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 15
+                    }
+                }
+            },
+            "templateData": "<svg width=\"300\" height=\"120\" class=\"app-graph\">\r\n  <polyline [attr.points]=\"points\" fill=\"none\" [attr.stroke]=\"stroke\" stroke-width=\"2\" />\r\n</svg>\r\n"
+        },
+        {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-2be3941ac6ebfbe3174a0aeb2aa62cc1a31b1d60fef82a5de4dd716478c8cba8b209c477e544892c9040ceb5f53832659575ea61c745b25b068c6090d0383352",
+            "id": "component-HeaderComponent-facc5eb86043f88189a92947e313f8fd0cf22ef63b0466f4f6e20e9940caec033f7aa769e1cbf39ee769c59aa0e23977c5e56834f7afc0b5c4665489d7e19c22",
             "file": "src/app/app/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-header",
+            "selector": "lib-header",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1217,24 +1381,24 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from '../button/button.component';\n\nexport interface User {\n  name: string;\n}\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from '../button/button.component';\n\nexport interface User {\n  name: string;\n}\n\n@Component({\n  selector: 'lib-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<header>\n  <div class=\"app-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b>!\n        </span>\n        <app-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></app-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <app-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></app-button>\n        <app-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></app-button>\n      </div>\n    </div>\n  </div>\n</header>\n"
+            "templateData": "<header>\n  <div class=\"app-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b>!\n        </span>\n        <lib-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></lib-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <lib-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></lib-button>\n        <lib-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></lib-button>\n      </div>\n    </div>\n  </div>\n</header>\n"
         },
         {
             "name": "IconKebabComponent",
-            "id": "component-IconKebabComponent-e83d022a97d696bcbeb829899c7201a4b4baf75307043ca592614f608d0f6b02ba017d56fa698e60ca4dbc7df5e56f4104019dccca1abf8ae487d39216c12cd8",
+            "id": "component-IconKebabComponent-1de54eb105d6654973a66ff7f850f2ff6c8f8577c372a513ce3a6b8ee3d41252b5c2f264c5c209fced7a8592a3d63c383d2147780841da816d733abccbfd475a",
             "file": "src/app/app/components/icon-kebab/icon-kebab.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-icon-kebab",
+            "selector": "lib-icon-kebab",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1269,7 +1433,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-icon-kebab',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './icon-kebab.component.html',\r\n  styleUrl: './icon-kebab.component.scss',\r\n})\r\nexport class IconKebabComponent {\r\n  @Output() onClick = new EventEmitter<Event>();\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-icon-kebab',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './icon-kebab.component.html',\r\n  styleUrl: './icon-kebab.component.scss',\r\n})\r\nexport class IconKebabComponent {\r\n  @Output() onClick = new EventEmitter<Event>();\r\n}\r\n",
             "styleUrl": "./icon-kebab.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1279,14 +1443,14 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-cab3d71967ccbddf86687a808e680e3d7d3cbabe1b847a6e1221cf729a06a0c22c1f424c2b66e2b1a3e0e99e26f097598f71c5acc9e1608d4d1795391c5d4ea2",
+            "id": "component-InputComponent-82dec1bac630b29166aec945a7da10352d0c1b634c0f94dcdb78766c96ae3c15ba5a5e8ccef3c3b1c6b51b0d2779a53c3737c6cb993f79f7e426b6c9ba2746e4",
             "file": "src/app/app/components/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-input",
+            "selector": "lib-input",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1383,7 +1547,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input.component.html',\r\n  styleUrl: './input.component.scss',\r\n})\r\nexport class InputComponent {\r\n  @Input()\r\n  type: 'text' | 'password' | 'email' | 'number' = 'text';\r\n\r\n  @Input()\r\n  placeholder = '';\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Input()\r\n  value = '';\r\n\r\n  @Output()\r\n  onInput = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-input--primary' : 'app-input--secondary';\r\n\r\n    return ['app-input', `app-input--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './input.component.html',\r\n  styleUrl: './input.component.scss',\r\n})\r\nexport class InputComponent {\r\n  @Input()\r\n  type: 'text' | 'password' | 'email' | 'number' = 'text';\r\n\r\n  @Input()\r\n  placeholder = '';\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Input()\r\n  value = '';\r\n\r\n  @Output()\r\n  onInput = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-input--primary' : 'app-input--secondary';\r\n\r\n    return ['app-input', `app-input--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "styleUrl": "./input.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1401,6 +1565,59 @@
                 }
             },
             "templateData": "<input\r\n  [type]=\"type\"\r\n  [placeholder]=\"placeholder\"\r\n  [value]=\"value\"\r\n  (input)=\"onInput.emit($event)\"\r\n  (change)=\"onChange.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n/>\r\n"
+        },
+        {
+            "name": "LoaderComponent",
+            "id": "component-LoaderComponent-e59b1131c03b8896eeaef70129b18ae31512cb67ff1e50ce879d2976c98af9aeca82f4d2ac3c648af9cd044a9c0af0dd2b2887ce8a8a5dbd2993a5c276b06d88",
+            "file": "src/app/app/components/loader/loader.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-loader",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./loader.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "40",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-loader',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './loader.component.html',\r\n  styleUrl: './loader.component.scss',\r\n})\r\nexport class LoaderComponent {\r\n  @Input() size = 40;\r\n}\r\n",
+            "styleUrl": "./loader.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"app-loader\" [style.width.px]=\"size\" [style.height.px]=\"size\">\r\n  <svg viewBox=\"0 0 50 50\">\r\n    <circle cx=\"25\" cy=\"25\" r=\"20\" fill=\"none\" stroke=\"#555ab9\" stroke-width=\"4\" stroke-linecap=\"round\"></circle>\r\n  </svg>\r\n</div>\r\n"
         },
         {
             "name": "PageComponent",
@@ -1490,7 +1707,280 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<article>\n  <app-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></app-header>\n  <section class=\"app-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>\n"
+            "templateData": "<article>\n  <lib-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></lib-header>\n  <section class=\"app-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>\n"
+        },
+        {
+            "name": "PasswordInputComponent",
+            "id": "component-PasswordInputComponent-d6d9938a5667c806e8d079b75d25f23c268ec7bb21fae2bce0bef400116d210c5285d5f88a4acbed7f8878ce1af9d0124e736f479d74e4d3d9c99c4ad0ec805c",
+            "file": "src/app/app/components/password-input/password-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-password-input",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./password-input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "input",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "show",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onInput",
+                    "args": [
+                        {
+                            "name": "ev",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "ev",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-password-input',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './password-input.component.html',\r\n  styleUrl: './password-input.component.scss',\r\n})\r\nexport class PasswordInputComponent {\r\n  @Input() placeholder = '';\r\n  @Input() value = '';\r\n  @Output() input = new EventEmitter<string>();\r\n\r\n  show = false;\r\n\r\n  onInput(ev: Event) {\r\n    const v = (ev.target as HTMLInputElement).value;\r\n    this.value = v;\r\n    this.input.emit(v);\r\n  }\r\n\r\n  toggle() { this.show = !this.show; }\r\n}\r\n",
+            "styleUrl": "./password-input.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"app-password-input\">\r\n  <input [type]=\"show ? 'text' : 'password'\" [placeholder]=\"placeholder\" [value]=\"value\" (input)=\"onInput($event)\" />\r\n  <button type=\"button\" class=\"toggle\" (click)=\"toggle()\">{{ show ? 'Hide' : 'Show' }}</button>\r\n</div>\r\n"
+        },
+        {
+            "name": "PieChartComponent",
+            "id": "component-PieChartComponent-e619b2029e5b5069e579a35a348cd5d841493458bd3e911e552887d491b4faa69be52a3bc7f9a3a7894dc215935b08d1a02a5bebd1fb1f52ac09ddf081f7fdc5",
+            "file": "src/app/app/components/pie-chart/pie-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-pie-chart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./pie-chart.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "slices",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "arcPath",
+                    "args": [
+                        {
+                            "name": "startAngle",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "endAngle",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "radius",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "50"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "startAngle",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "endAngle",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "radius",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "50",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getPaths",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-pie-chart',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './pie-chart.component.html',\r\n  styleUrl: './pie-chart.component.scss',\r\n})\r\nexport class PieChartComponent {\r\n  @Input() slices: { label: string; value: number; color?: string }[] = [];\r\n\r\n  get total() { return this.slices.reduce((s, c) => s + (c.value || 0), 0); }\r\n\r\n  // Returns SVG path for arc slice\r\n  arcPath(startAngle: number, endAngle: number, radius = 50) {\r\n    const large = endAngle - startAngle > Math.PI ? 1 : 0;\r\n    const x1 = 50 + radius * Math.cos(startAngle);\r\n    const y1 = 50 + radius * Math.sin(startAngle);\r\n    const x2 = 50 + radius * Math.cos(endAngle);\r\n    const y2 = 50 + radius * Math.sin(endAngle);\r\n    return `M50 50 L ${x1} ${y1} A ${radius} ${radius} 0 ${large} 1 ${x2} ${y2} Z`;\r\n  }\r\n\r\n  getPaths() {\r\n    let angle = -Math.PI/2;\r\n    return this.slices.map(s => {\r\n      const portion = this.total ? (s.value / this.total) : 0;\r\n      const next = angle + portion * Math.PI * 2;\r\n      const path = this.arcPath(angle, next);\r\n      angle = next;\r\n      return { path, color: s.color || '#'+Math.floor(Math.random()*16777215).toString(16), label: s.label };\r\n    });\r\n  }\r\n}\r\n",
+            "styleUrl": "./pie-chart.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "total": {
+                    "name": "total",
+                    "getSignature": {
+                        "name": "total",
+                        "type": "",
+                        "returnType": "",
+                        "line": 14
+                    }
+                }
+            },
+            "templateData": "<svg viewBox=\"0 0 100 100\" class=\"app-pie\">\r\n  <g *ngFor=\"let p of getPaths()\">\r\n    <path [attr.d]=\"p.path\" [attr.fill]=\"p.color\"></path>\r\n  </g>\r\n</svg>\r\n"
         },
         {
             "name": "PopupComponent",
@@ -1565,14 +2055,14 @@
         },
         {
             "name": "RadioComponent",
-            "id": "component-RadioComponent-9a4fe5a530cdc55f4a775d044f208758aed0abadc9cfd242713b28dbfe9a6d4205e2a2e65dae581603bb65a6708a09455c9584e1af7279a0dc59cbed12b0dee7",
+            "id": "component-RadioComponent-8a958b268c668674b336a4c6e1638af3a530da37f065b1b0e9535952988880a895701293ce0e9b17633dfc01f92539e9be4331ff2ba33d39dcdf916cdd751ed9",
             "file": "src/app/app/components/radio/radio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-radio",
+            "selector": "lib-radio",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1653,7 +2143,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-radio',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './radio.component.html',\r\n  styleUrl: './radio.component.scss',\r\n})\r\nexport class RadioComponent {\r\n  @Input()\r\n  label = '';\r\n\r\n  @Input()\r\n  name = '';\r\n\r\n  @Input()\r\n  value = '';\r\n\r\n  @Input()\r\n  checked = false;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-radio--primary' : 'app-radio--secondary';\r\n    return ['app-radio', mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-radio',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './radio.component.html',\r\n  styleUrl: './radio.component.scss',\r\n})\r\nexport class RadioComponent {\r\n  @Input()\r\n  label = '';\r\n\r\n  @Input()\r\n  name = '';\r\n\r\n  @Input()\r\n  value = '';\r\n\r\n  @Input()\r\n  checked = false;\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n  @Output()\r\n  onChange = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'app-radio--primary' : 'app-radio--secondary';\r\n    return ['app-radio', mode];\r\n  }\r\n}\r\n",
             "styleUrl": "./radio.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1674,14 +2164,14 @@
         },
         {
             "name": "StepperHorizontalComponent",
-            "id": "component-StepperHorizontalComponent-e15fb3ab348955445e7fe7b1c38e9efed35887a743a8cd52620c11edade1c65415f7d3f87089441e29adb3fad2d72924135329dcfc31d3123fb2d2a86696eb79",
+            "id": "component-StepperHorizontalComponent-57648dfd08e0005b3cb845d7956a19886d6bac96ac4bce64da10bca152d6240f23a6c660e66090819769b1c6aece6cd08e19ec75707669c8ba93fcb1fa5baaf2",
             "file": "src/app/app/components/stepper-horizontal/stepper-horizontal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-stepper-horizontal",
+            "selector": "lib-stepper-horizontal",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1768,7 +2258,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-stepper-horizontal',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './stepper-horizontal.component.html',\r\n  styleUrl: './stepper-horizontal.component.scss',\r\n})\r\nexport class StepperHorizontalComponent {\r\n  @Input() steps: string[] = [];\r\n  @Input() current = 0;\r\n  @Output() stepChange = new EventEmitter<number>();\r\n\r\n  go(i: number) { this.current = i; this.stepChange.emit(i); }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-stepper-horizontal',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './stepper-horizontal.component.html',\r\n  styleUrl: './stepper-horizontal.component.scss',\r\n})\r\nexport class StepperHorizontalComponent {\r\n  @Input() steps: string[] = [];\r\n  @Input() current = 0;\r\n  @Output() stepChange = new EventEmitter<number>();\r\n\r\n  go(i: number) { this.current = i; this.stepChange.emit(i); }\r\n}\r\n",
             "styleUrl": "./stepper-horizontal.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1778,14 +2268,14 @@
         },
         {
             "name": "StepperVerticalComponent",
-            "id": "component-StepperVerticalComponent-e4950de825b2259229f2da429e9a7e62bef5797128bc5cf897efcf01c5a715ea3f56ad876e0f6b2b1ef79b34419fc6d7a1b6e638022ad4bab50df2d5d2e3825e",
+            "id": "component-StepperVerticalComponent-40bc18c51c425d1f967cc52ca339cced94830ff2a6184e64210b8c3d832685b890a3a70a59c6aee770aaf61922bc3a9804e4946bf4349921da3a039b6ca1f5da",
             "file": "src/app/app/components/stepper-vertical/stepper-vertical.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-stepper-vertical",
+            "selector": "lib-stepper-vertical",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -1872,13 +2362,228 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-stepper-vertical',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './stepper-vertical.component.html',\r\n  styleUrl: './stepper-vertical.component.scss',\r\n})\r\nexport class StepperVerticalComponent {\r\n  @Input() steps: string[] = [];\r\n  @Input() current = 0;\r\n  @Output() stepChange = new EventEmitter<number>();\r\n\r\n  go(i: number) { this.current = i; this.stepChange.emit(i); }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-stepper-vertical',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './stepper-vertical.component.html',\r\n  styleUrl: './stepper-vertical.component.scss',\r\n})\r\nexport class StepperVerticalComponent {\r\n  @Input() steps: string[] = [];\r\n  @Input() current = 0;\r\n  @Output() stepChange = new EventEmitter<number>();\r\n\r\n  go(i: number) { this.current = i; this.stepChange.emit(i); }\r\n}\r\n",
             "styleUrl": "./stepper-vertical.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"app-stepper-vertical\">\r\n  <ol>\r\n    <li *ngFor=\"let s of steps; let i = index\" [class.active]=\"i === current\" (click)=\"go(i)\">\r\n      <div class=\"step-index\">{{ i + 1 }}</div>\r\n      <div class=\"step-label\">{{ s }}</div>\r\n    </li>\r\n  </ol>\r\n</div>\r\n"
+        },
+        {
+            "name": "TableComponent",
+            "id": "component-TableComponent-7a274148ff970adbe24081f1666aa4d67dd8a9f94d07877d6eebb196f5b03d96f4eb04f21038e758256f02ea59a99899a0914a10a0cf91533f63c6eb866dfe63",
+            "file": "src/app/app/components/table/table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-table",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./table.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "pageSize",
+                    "defaultValue": "5",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "showPaginator",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "page",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "next",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "prev",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-table',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './table.component.html',\r\n  styleUrl: './table.component.scss',\r\n})\r\nexport class TableComponent {\r\n  @Input() columns: { key: string; label: string }[] = [];\r\n  @Input() data: any[] = [];\r\n  @Input() pageSize = 5;\r\n  @Input() showPaginator = false;\r\n\r\n  page = 0;\r\n\r\n  get totalPages() { return Math.max(1, Math.ceil(this.data.length / this.pageSize)); }\r\n\r\n  get paged() {\r\n    if (!this.showPaginator) return this.data;\r\n    const start = this.page * this.pageSize;\r\n    return this.data.slice(start, start + this.pageSize);\r\n  }\r\n\r\n  prev() { if (this.page > 0) this.page--; }\r\n  next() { if (this.page < this.totalPages - 1) this.page++; }\r\n}\r\n",
+            "styleUrl": "./table.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "totalPages": {
+                    "name": "totalPages",
+                    "getSignature": {
+                        "name": "totalPages",
+                        "type": "",
+                        "returnType": "",
+                        "line": 19
+                    }
+                },
+                "paged": {
+                    "name": "paged",
+                    "getSignature": {
+                        "name": "paged",
+                        "type": "",
+                        "returnType": "",
+                        "line": 21
+                    }
+                }
+            },
+            "templateData": "<table class=\"app-table\">\r\n  <thead>\r\n    <tr><th *ngFor=\"let c of columns\">{{ c.label }}</th></tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let row of paged\">\r\n      <td *ngFor=\"let c of columns\">{{ row[c.key] }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n\r\n<div *ngIf=\"showPaginator\" class=\"app-table__pager\">\r\n  <button (click)=\"prev()\" [disabled]=\"page===0\">Prev</button>\r\n  <span>Page {{ page + 1 }} / {{ totalPages }}</span>\r\n  <button (click)=\"next()\" [disabled]=\"page>= totalPages-1\">Next</button>\r\n</div>\r\n"
+        },
+        {
+            "name": "ToggleSwitchComponent",
+            "id": "component-ToggleSwitchComponent-eb0345db84c933d20e5274ad0d2665c165a41cf36a8e2ab675d5a9e20bb0450511b33d730f879bbf9d6f7d84977c0eb99e93cf3b6ee8f0baed7937f94e829763",
+            "file": "src/app/app/components/toggle-switch/toggle-switch.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-toggle-switch",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./toggle-switch.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "change",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'lib-toggle-switch',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './toggle-switch.component.html',\r\n  styleUrl: './toggle-switch.component.scss',\r\n})\r\nexport class ToggleSwitchComponent {\r\n  @Input() checked = false;\r\n  @Input() disabled = false;\r\n  @Output() change = new EventEmitter<boolean>();\r\n\r\n  toggle() {\r\n    if (this.disabled) return;\r\n    this.checked = !this.checked;\r\n    this.change.emit(this.checked);\r\n  }\r\n}\r\n",
+            "styleUrl": "./toggle-switch.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button class=\"app-toggle\" role=\"switch\" [attr.aria-checked]=\"checked\" [disabled]=\"disabled\" (click)=\"toggle()\">\r\n  <span class=\"track\" [class.on]=\"checked\"><span class=\"knob\"></span></span>\r\n</button>\r\n"
         }
     ],
     "modules": [],
@@ -2116,7 +2821,7 @@
         "children": []
     },
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -2188,6 +2893,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/app/components/bar-graph/bar-graph.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BarGraphComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2251,6 +2965,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/app/components/graph/graph.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GraphComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app/components/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2287,6 +3010,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/app/components/loader/loader.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LoaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app/components/page/page.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2302,6 +3034,24 @@
                 "name": "User",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app/components/password-input/password-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PasswordInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app/components/pie-chart/pie-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PieChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2336,6 +3086,24 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "StepperVerticalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app/components/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app/components/toggle-switch/toggle-switch.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToggleSwitchComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
