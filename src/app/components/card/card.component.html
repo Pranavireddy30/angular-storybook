@@ -1,0 +1,8 @@
+<article [ngClass]="classes">
+  <img *ngIf="image" [src]="image" alt="" class="app-card__image" />
+  <div class="app-card__body">
+    <h3 *ngIf="title">{{ title }}</h3>
+    <p *ngIf="subtitle">{{ subtitle }}</p>
+    <ng-content></ng-content>
+  </div>
+</article>

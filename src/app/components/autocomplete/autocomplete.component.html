@@ -1,0 +1,6 @@
+<div class="app-autocomplete">
+  <input class="app-autocomplete__input" [placeholder]="placeholder" [value]="value" (input)="onChange($event)" />
+  <ul *ngIf="filtered.length" class="app-autocomplete__list">
+    <li *ngFor="let item of filtered" (click)="select(item)">{{ item }}</li>
+  </ul>
+</div>

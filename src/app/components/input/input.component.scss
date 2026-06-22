@@ -1,0 +1,41 @@
+.app-input {
+  display: inline-block;
+  border: 0;
+  border-radius: 0.5em;
+  font-weight: 700;
+  line-height: 1;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  outline: none;
+}
+
+.app-input--primary {
+  background-color: #555ab9;
+  color: white;
+}
+
+.app-input--secondary {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  background-color: transparent;
+  color: #333;
+}
+
+.app-input--small {
+  padding: 10px 16px;
+  font-size: 12px;
+}
+
+.app-input--medium {
+  padding: 11px 20px;
+  font-size: 14px;
+}
+
+.app-input--large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+input.app-input {
+  --webkit-appearance: none;
+  box-sizing: border-box;
+  border: 1px solid #171717;
+}

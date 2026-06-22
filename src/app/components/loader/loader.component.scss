@@ -1,0 +1,3 @@
+.app-loader { display:inline-block; }
+.app-loader svg { width:100%; height:100%; animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }

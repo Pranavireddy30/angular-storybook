@@ -1,0 +1,13 @@
+.app-card {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.app-card--elevated { box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.app-card__image { width: 100%; height: auto; display: block; }
+.app-card__body { padding: 16px; }
+.app-card__body h3 { margin: 0 0 6px 0; }
+.app-card__body p { margin: 0 0 8px 0; color: #666; }

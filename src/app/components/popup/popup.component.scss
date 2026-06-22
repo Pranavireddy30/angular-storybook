@@ -1,0 +1,3 @@
+.app-popup__backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); }
+.app-popup__panel { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); background: white; padding: 16px; border-radius: 8px; z-index: 20; min-width: 280px; }
+.app-popup__footer { margin-top: 12px; text-align: right; }

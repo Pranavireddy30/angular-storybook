@@ -1,0 +1,10 @@
+<select #sel
+  [ngClass]="classes"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+  (change)="onSelect.emit(sel.value)"
+>
+  <option value="">{{ placeholder }}</option>
+  <option *ngFor="let opt of options" [value]="opt.value" [selected]="opt.value === selected">
+    {{ opt.label }}
+  </option>
+</select>

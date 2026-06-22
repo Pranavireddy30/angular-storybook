@@ -1,0 +1,6 @@
+<svg [attr.width]="width" [attr.height]="height" class="app-bar-graph">
+  <g *ngFor="let b of bars">
+    <rect [attr.x]="b.x" [attr.y]="b.y" [attr.width]="b.w" [attr.height]="b.h" [attr.fill]="b.color"></rect>
+    <text [attr.x]="b.x + b.w / 2" [attr.y]="height - 4" text-anchor="middle" class="label">{{ b.label }}</text>
+  </g>
+</svg>

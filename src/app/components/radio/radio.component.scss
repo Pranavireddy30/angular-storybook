@@ -1,0 +1,5 @@
+.app-radio { display: inline-flex; align-items: center; gap: 8px; }
+.app-radio__label { font-weight: 600; }
+.app-radio--primary input { accent-color: #555ab9; }
+.app-radio--secondary input { accent-color: #333; }
+input[type='radio'] { width: 16px; height: 16px; }

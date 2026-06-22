@@ -1,0 +1,9 @@
+<input
+  [type]="type"
+  [placeholder]="placeholder"
+  [value]="value"
+  (input)="onInput.emit($event)"
+  (change)="onChange.emit($event)"
+  [ngClass]="classes"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+/>

@@ -2,18 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
+  selector: 'lib-button',
   standalone: true,
   imports: [CommonModule],
-  template: ` <button
-  type="button"
-  (click)="onClick.emit($event)"
-  [ngClass]="classes"
-  [ngStyle]="{ 'background-color': backgroundColor }"
->
-  {{ label }}
-</button>`,
-  styleUrls: ['./button.css'],
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
   /** Is this the principal call to action on the page? */
@@ -41,8 +34,8 @@ export class ButtonComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+    const mode = this.primary ? 'app-button--primary' : 'app-button--secondary';
 
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    return ['app-button', `app-button--${this.size}`, mode];
   }
 }
