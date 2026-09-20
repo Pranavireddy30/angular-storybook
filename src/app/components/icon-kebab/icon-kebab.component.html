@@ -1,5 +1,31 @@
-<button class="app-icon-kebab" (click)="onClick.emit($event)" aria-label="More options">
-  <span class="dot" aria-hidden="true"></span>
-  <span class="dot" aria-hidden="true"></span>
-  <span class="dot" aria-hidden="true"></span>
-</button>
+<div class="app-icon-kebab-menu">
+  <button
+    #menuButton
+    class="app-icon-kebab"
+    type="button"
+    (click)="toggleMenu($event)"
+    [attr.aria-expanded]="menuOpen"
+    aria-label="More options"
+  >
+    <span class="dot" aria-hidden="true"></span>
+    <span class="dot" aria-hidden="true"></span>
+    <span class="dot" aria-hidden="true"></span>
+  </button>
+
+  <app-popup [open]="menuOpen" variant="menu" [placement]="placement" [anchorRect]="anchorRect" (close)="closeMenu()">
+    <div class="app-kebab-popup__list" role="menu" aria-label="More actions">
+      <div
+        *ngFor="let item of items"
+        class="app-kebab-popup__item"
+        role="menuitem"
+        tabindex="0"
+        (click)="selectItem(item)"
+        (keydown.enter)="selectItem(item)"
+        (keydown.space)="selectItem(item)"
+      >
+        <span *ngIf="item.icon" class="app-kebab-popup__icon" aria-hidden="true">{{ item.icon }}</span>
+        <span class="app-kebab-popup__label">{{ item.label }}</span>
+      </div>
+    </div>
+  </app-popup>
+</div>

@@ -1,3 +1,47 @@
-.app-card-slider { display: flex; align-items: center; gap: 8px; }
-.app-card-slider__viewport { display: flex; overflow-x: auto; gap: 12px; scroll-behavior: smooth; }
-.app-card-slider button { background: none; border: none; font-size: 24px; cursor: pointer; }
+.app-card-slider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.app-card-slider__viewport {
+  display: flex;
+  overflow-x: hidden;
+  gap: 12px;
+  scroll-behavior: smooth;
+  flex: 1;
+  width: 100%;
+  min-height: 300px;
+}
+
+.app-card-slider__button {
+  flex-shrink: 0;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background: #e0e0e0;
+    border-color: #999;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  span {
+    font-weight: bold;
+    color: #333;
+  }
+}

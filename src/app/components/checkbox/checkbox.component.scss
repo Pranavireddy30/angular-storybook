@@ -7,7 +7,7 @@
 
 .app-checkbox__label { font-weight: 600; }
 
-.app-checkbox--primary input { accent-color: #555ab9; }
-.app-checkbox--secondary input { accent-color: #333; }
+.app-checkbox--primary input,
+.app-checkbox--secondary input { accent-color: #555ab9; }
 
 input[type='checkbox'] { width: 16px; height: 16px; }

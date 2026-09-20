@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './password-input.component.html',
-  styleUrl: './password-input.component.scss',
+  styleUrls: ['./password-input.component.scss'],
 })
 export class PasswordInputComponent {
   @Input() placeholder = '';

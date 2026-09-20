@@ -1,8 +1,15 @@
-<div class="app-popup" *ngIf="open" role="dialog" aria-modal="true">
-  <div class="app-popup__backdrop" (click)="close.emit()"></div>
-  <div class="app-popup__panel">
-    <header *ngIf="title"><h3>{{ title }}</h3></header>
+<div class="app-popup" *ngIf="open" [class.app-popup--menu]="variant === 'menu'" role="dialog" [attr.aria-modal]="variant === 'menu' ? 'false' : 'true'" [attr.aria-labelledby]="title ? 'app-popup-title' : null">
+  <div class="app-popup__backdrop" *ngIf="variant !== 'menu'" (click)="close.emit()" aria-hidden="true"></div>
+
+  <div #popupPanel class="app-popup__panel" [class.app-popup__panel--menu]="variant === 'menu'" [ngStyle]="panelStyle">
+    <header class="app-popup__header" *ngIf="title && variant !== 'menu'">
+      <h3 id="app-popup-title" class="app-popup__title">{{ title }}</h3>
+    </header>
+
     <section class="app-popup__body"><ng-content></ng-content></section>
-    <footer class="app-popup__footer"><button (click)="close.emit()">Close</button></footer>
+
+    <footer class="app-popup__footer" *ngIf="variant !== 'menu'">
+      <button type="button" class="app-popup__close-button" (click)="close.emit()">Close</button>
+    </footer>
   </div>
 </div>

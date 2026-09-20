@@ -10,6 +10,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class StepperVerticalComponent {
   @Input() steps: string[] = [];
+  @Input() descriptions: string[] = [];
   @Input() current = 0;
   @Output() stepChange = new EventEmitter<number>();
 

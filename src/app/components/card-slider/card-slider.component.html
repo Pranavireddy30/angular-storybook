@@ -1,7 +1,19 @@
 <div class="app-card-slider">
-  <button (click)="prev()">‹</button>
-  <div class="app-card-slider__viewport">
+  <button 
+    class="app-card-slider__button app-card-slider__button--prev" 
+    (click)="prev()" 
+    [disabled]="isPrevDisabled"
+    aria-label="Previous">
+    <span>‹</span>
+  </button>
+  <div class="app-card-slider__viewport" #viewport>
     <ng-content></ng-content>
   </div>
-  <button (click)="next()">›</button>
+  <button 
+    class="app-card-slider__button app-card-slider__button--next" 
+    (click)="next()" 
+    [disabled]="isNextDisabled"
+    aria-label="Next">
+    <span>›</span>
+  </button>
 </div>

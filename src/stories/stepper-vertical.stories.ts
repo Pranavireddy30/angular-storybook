@@ -10,4 +10,10 @@ const meta: Meta<StepperVerticalComponent> = {
 export default meta;
 type Story = StoryObj<StepperVerticalComponent>;
 
-export const Default: Story = { args: { steps: ['Step A','Step B','Step C'] } };
+export const Default: Story = {
+  args: {
+    steps: ['Label', 'Label', 'Label'],
+    descriptions: ['','Description...', ''],
+    current: 1,
+  },
+};

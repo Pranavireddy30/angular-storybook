@@ -1,8 +1,24 @@
 <div class="app-stepper-vertical">
   <ol>
-    <li *ngFor="let s of steps; let i = index" [class.active]="i === current" (click)="go(i)">
-      <div class="step-index">{{ i + 1 }}</div>
-      <div class="step-label">{{ s }}</div>
+    <li
+      *ngFor="let s of steps; let i = index"
+      [class.active]="i === current"
+      [class.completed]="i < current"
+      (click)="go(i)"
+    >
+      <div class="step-node">
+        <ng-container *ngIf="i < current; else stepNumber">✓</ng-container>
+        <ng-template #stepNumber>{{ i + 1 }}</ng-template>
+      </div>
+
+      <div class="step-content">
+        <div class="step-label">{{ s }}</div>
+        <div class="step-description" *ngIf="i === current && descriptions[i]">{{ descriptions[i] }}</div>
+        <div class="step-actions" *ngIf="i === current">
+          <button type="button" class="btn btn-primary">Continue</button>
+          <button type="button" class="btn btn-secondary">Back</button>
+        </div>
+      </div>
     </li>
   </ol>
 </div>
