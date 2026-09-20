@@ -29,9 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
@@ -86,12 +84,7 @@
             "configDir": ".storybook",
             "browserTarget": "storybook:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "."
-            ],
+            "compodocArgs": ["-e", "json", "-d", "."],
             "port": 6006
           }
         },
@@ -101,13 +94,34 @@
             "configDir": ".storybook",
             "browserTarget": "storybook:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "."
-            ],
+            "compodocArgs": ["-e", "json", "-d", "."],
             "outputDir": "storybook-static"
+          }
+        }
+      }
+    },
+    "my-storybook": {
+      "projectType": "library",
+      "root": "projects/my-storybook",
+      "sourceRoot": "projects/my-storybook/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-storybook/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-storybook/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/my-storybook/tsconfig.spec.json"
           }
         }
       }
