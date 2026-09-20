@@ -1,59 +1,139 @@
-# Storybook
+# Angular Storybook
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+A reusable Angular design system and component showcase built with Storybook. This project includes an Angular app for demoing components and a library package named `my-storybook` for reusable UI components.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+- Angular 21 application
+- Storybook integration with docs and accessibility add-ons
+- Library package under `projects/my-storybook`
+- Component stories under `src/stories`
+
+## Prerequisites
+
+- Node.js 20+
+- npm 10+
+
+## Installation
+
+```bash
+npm install
+```
+
+## Run Storybook locally
 
 ```bash
 npm run storybook
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open the browser at:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:6006
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Storybook will reload automatically when you change story or component files.
+
+## Build Storybook
+
+To generate a static Storybook build:
 
 ```bash
-ng generate --help
+npm run build-storybook
 ```
 
-## Building
+The output will be created in the `storybook-static` folder.
 
-To build the project run:
+## Build the Angular app
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Run tests
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Build the library package
 
 ```bash
-ng e2e
+ng build my-storybook
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This compiles the reusable Angular library in `projects/my-storybook`.
 
-## Additional Resources
+## Generate the package as a .tgz file
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The publishable tarball is created from the built library output, not from the Storybook app root.
+
+### Step 1: build the library
+
+```bash
+ng build my-storybook
+```
+
+This generates the distributable package under:
+
+```text
+dist/my-storybook
+```
+
+### Step 2: create the .tgz file
+
+```bash
+cd dist/my-storybook
+npm pack
+```
+
+This creates a file like:
+
+```text
+my-storybook-0.0.1.tgz
+```
+
+### Step 3: install it in another Angular app
+
+From the app that should consume the package:
+
+```bash
+npm install ./dist/my-storybook/my-storybook-0.0.1.tgz
+```
+
+If you already have the tarball in the same folder, you can also install it with:
+
+```bash
+npm install ./my-storybook-0.0.1.tgz
+```
+
+## Project structure
+
+```text
+storybook/
+├── src/
+│   ├── app/
+│   └── stories/
+├── projects/
+│   └── my-storybook/
+├── angular.json
+├── package.json
+├── .storybook/
+├── public/
+├── README.md
+└── tsconfig.json
+```
+
+## Useful commands
+
+```bash
+npm run start
+npm run storybook
+npm run build-storybook
+npm run build
+npm test
+```
+
+## Notes
+
+This project is intended for component development, visual testing, and documentation of Angular UI elements in a Storybook environment.
