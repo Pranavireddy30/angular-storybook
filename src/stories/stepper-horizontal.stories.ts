@@ -10,4 +10,9 @@ const meta: Meta<StepperHorizontalComponent> = {
 export default meta;
 type Story = StoryObj<StepperHorizontalComponent>;
 
-export const Default: Story = { args: { steps: ['Shipping','Payment','Review'] } };
+export const Default: Story = {
+  args: {
+    steps: ['Label', 'Label', 'Label'],
+    current: 0,
+  },
+};

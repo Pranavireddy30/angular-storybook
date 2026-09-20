@@ -1,3 +1,126 @@
-.app-popup__backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); }
-.app-popup__panel { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); background: white; padding: 16px; border-radius: 8px; z-index: 20; min-width: 280px; }
-.app-popup__footer { margin-top: 12px; text-align: right; }
+.app-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.app-popup--menu {
+  position: absolute;
+  inset: auto;
+  width: 0;
+  height: 0;
+  z-index: 1100;
+}
+
+.app-popup__backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+}
+
+.app-popup__panel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(420px, calc(100vw - 32px));
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  padding: 20px 20px 16px;
+  z-index: 20;
+}
+
+.app-popup__panel--menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 210px;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  transform: none;
+}
+
+.app-popup__header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.app-popup__title {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: #111827;
+}
+
+.app-popup__body {
+  color: #374151;
+  line-height: 1.5;
+}
+
+.app-popup__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.app-popup__close-button {
+  border: 1px solid #d1d5db;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-kebab-popup__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.app-kebab-popup__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  color: #1f1f1f;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.app-kebab-popup__item:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.app-kebab-popup__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-kebab-popup__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: #4b4b4b;
+  font-size: 0.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}

@@ -1,4 +1,81 @@
-.app-stepper-horizontal ol { display: flex; gap: 12px; list-style: none; padding: 0; margin: 0; }
-.app-stepper-horizontal li { cursor: pointer; padding: 8px 12px; border-radius: 6px; background: #f3f3f3; display: flex; gap: 8px; align-items: center; }
-.app-stepper-horizontal li.active { background: #555ab9; color: white; }
-.app-stepper-horizontal .step-index { font-weight: 700; }
+.app-stepper-horizontal {
+  width: 100%;
+  padding: 12px 0;
+}
+
+.app-stepper-horizontal .stepper-track {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app-stepper-horizontal ol {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.app-stepper-horizontal li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 170px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #4c4c4c;
+}
+
+.app-stepper-horizontal li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: calc(50% + 15px);
+  width: calc(100% - 30px);
+  height: 2px;
+  background: #4f46e5;
+  z-index: 0;
+}
+
+.app-stepper-horizontal .step-node {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid #4f46e5;
+  color: #4b4b4b;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 0 0 4px #fff;
+  transition: all 0.2s ease;
+}
+
+.app-stepper-horizontal li.active .step-node,
+.app-stepper-horizontal li.completed .step-node {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #ffffff;
+}
+
+.app-stepper-horizontal .step-label {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #4b4b4b;
+  text-align: center;
+}
+
+.app-stepper-horizontal li.active .step-label {
+  color: #1f1f1f;
+  font-weight: 600;
+}

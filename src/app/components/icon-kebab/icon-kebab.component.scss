@@ -1,2 +1,38 @@
-.app-icon-kebab { background: transparent; border: none; display: inline-flex; gap: 4px; padding: 6px; cursor: pointer; }
-.app-icon-kebab .dot { width: 4px; height: 4px; background: #333; border-radius: 50%; display: inline-block; }
+.app-icon-kebab-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.app-icon-kebab {
+  background: transparent;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.app-icon-kebab:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.app-icon-kebab .dot {
+  width: 3px;
+  height: 3px;
+  background: #4b4b4b;
+  border-radius: 50%;
+  display: block;
+}
+
+.app-icon-kebab[aria-expanded='true'] {
+  background: rgba(0, 0, 0, 0.03);
+}

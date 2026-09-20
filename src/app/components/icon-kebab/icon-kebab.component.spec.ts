@@ -20,4 +20,9 @@ describe('IconKebabComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render the kebab button in vertical orientation', () => {
+    const button: HTMLElement = fixture.nativeElement.querySelector('.app-icon-kebab');
+    expect(button.classList.contains('app-icon-kebab--vertical')).toBeTrue();
+  });
 });
